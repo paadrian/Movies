@@ -49,12 +49,18 @@ jobs:
     - name: print files
       run: ls -R
     - uses: actions/checkout@master
+      continue-on-error: true
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/dotnet@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         args: --all-projects --detection-depth=20
+    - name: print current directory
+      run: pwd
+    - name: print files
+      run: ls -R
+      
 #       - uses: actions/checkout@v3
 #       - name: Set up Snyk CLI to check for security issues
 #         # Snyk can be used to break the build when it detects security issues.
