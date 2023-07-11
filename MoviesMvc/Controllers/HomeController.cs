@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MoviesMvc.Models;
+using Movies.Web.Models;
 using System.Diagnostics;
+using System.Text.Encodings.Web;
 
-namespace MoviesMvc.Controllers
+namespace Movies.Web.Controllers
 {
     public class HomeController : Controller
     {
@@ -15,6 +16,19 @@ namespace MoviesMvc.Controllers
 
         public IActionResult Index()
         {
+            return View();
+        }
+
+        public string Hi(string name, int id = 0)
+        {
+            return HtmlEncoder.Default.Encode($"Name = {name}, id = {id}");
+        }
+
+        public IActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewBag.Message = $"Hello {name}";
+            ViewBag.NumTimes = numTimes;
+
             return View();
         }
 
