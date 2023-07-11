@@ -1,7 +1,6 @@
-﻿namespace Movies.Infrastructure
-{
-    public class Class1
-    {
+﻿namespace Movies.Infrastructure;
 
-    }
+public class Class1
+{
+
 }
