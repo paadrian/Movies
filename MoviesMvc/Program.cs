@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using MoviesMvc.Data;
+using Movies.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

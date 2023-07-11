@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Movies.Web.Models;
 
-namespace MoviesMvc.Data
+namespace Movies.Web.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -9,5 +10,6 @@ namespace MoviesMvc.Data
             : base(options)
         {
         }
+        public DbSet<Movie> Movie { get; set; }
     }
 }
