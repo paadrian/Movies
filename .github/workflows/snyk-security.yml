@@ -57,6 +57,7 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
+        command: test
         args: --file=Movies.sln
     - name: print current directory
       run: pwd
