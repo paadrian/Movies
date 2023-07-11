@@ -35,15 +35,15 @@ jobs:
       actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
     runs-on: ubuntu-latest
     steps:    
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
+#     - uses: actions/checkout@v2
+#     - name: Setup .NET
+#       uses: actions/setup-dotnet@v1
+#       with:
+#         dotnet-version: 6.0.x
+#     - name: Restore dependencies
+#       run: dotnet restore
+#     - name: Build
+#       run: dotnet build --no-restore
     - name: print files
       run: ls -R
     - uses: actions/checkout@master
@@ -52,7 +52,7 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-        args: --all-projects
+        args: --all-projects --detection-depth=20
 #       - uses: actions/checkout@v3
 #       - name: Set up Snyk CLI to check for security issues
 #         # Snyk can be used to break the build when it detects security issues.
