@@ -44,13 +44,6 @@ jobs:
 #       run: dotnet restore
 #     - name: Build
 #       run: dotnet build --no-restore
-    - name: print current directory
-      run: pwd
-    - name: print files
-      run: ls -R
-    - uses: actions/checkout@master
-    - name: move to subfolder
-      run: cd MoviesMvc
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/dotnet@master
       continue-on-error: true
@@ -59,10 +52,6 @@ jobs:
       with:
         command: test
         args: --file=Movies.sln
-    - name: print current directory
-      run: pwd
-    - name: print files
-      run: ls -R
       
 #       - uses: actions/checkout@v3
 #       - name: Set up Snyk CLI to check for security issues
