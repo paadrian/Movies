@@ -57,7 +57,7 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-        args: --all-projects --detection-depth=20
+        args: --file=Movies.sln
     - name: print current directory
       run: pwd
     - name: print files
