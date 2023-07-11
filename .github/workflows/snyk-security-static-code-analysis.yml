@@ -36,8 +36,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: move to subfolder
-      run: cd MoviesMvc
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/dotnet@master
       continue-on-error: true
