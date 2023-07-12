@@ -30,6 +30,7 @@ namespace Movies.Web.Controllers
             ViewBag.NumTimes = numTimes;
 
             return View();
+            return View();
         }
 
         public IActionResult Privacy()
