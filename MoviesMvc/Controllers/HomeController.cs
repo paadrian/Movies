@@ -36,6 +36,7 @@ namespace Movies.Web.Controllers
 
         public IActionResult Privacy()
         {
+            var credentails = new NetworkCredential("123", "abc");
             return View();
         }
 
